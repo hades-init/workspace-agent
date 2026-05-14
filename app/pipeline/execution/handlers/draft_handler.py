@@ -91,7 +91,7 @@ def create_draft(data: dict, **kwargs) -> dict:
             .execute()
         )
 
-        logger.info("Gmail draft created action_id=%s", action_id)
+        logger.info("Email draft created for action_id=%s", action_id)
     except HttpError as e:
         logger.exception("Gmail create draft failed")
         raise HandlerError(f"Gmail API error: {e}") from e
@@ -100,3 +100,4 @@ def create_draft(data: dict, **kwargs) -> dict:
         "draft_id": response["id"],
         "message": response["message"]
     }
+

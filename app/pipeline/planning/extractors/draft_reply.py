@@ -157,17 +157,17 @@ def create_action(message: Message):
     profile = get_profile()
     requirements = reply_details.extract_requirements(message)
 
-    draft_email = _draft_reply_email(message, requirements, profile)
+    email_draft = _draft_reply_email(message, requirements, profile)
 
     payload = {
         "message_id": message.id,
         "thread_id": message.thread_id,
-        **draft_email.model_dump(mode="json"),
+        **email_draft.model_dump(mode="json"),
     }
 
     return Action(
         message_id=message.id,
-        action_type=ActionType.SEND_REPLY,
+        action_type=ActionType.DRAFT_REPLY,
         status=ActionStatus.PENDING,
         payload=payload
     )

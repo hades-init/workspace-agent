@@ -22,7 +22,7 @@ def run_once() -> None:
     # Classification
     # classify.run()
     # Planning
-    plan.run()
+    # plan.run()
     # Execution
     execute.run()
     logger.info("Pipeline run complete")

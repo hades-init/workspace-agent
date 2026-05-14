@@ -74,6 +74,7 @@ class Attachment(Base):
 # ------ Actions --------
 
 class ActionType(enum.Enum):
+    DRAFT_REPLY = "draft_reply"
     SEND_REPLY = "send_reply"
     CALENDAR_EVENT = "calendar_event"
     JOB_APPLY = "job_apply"

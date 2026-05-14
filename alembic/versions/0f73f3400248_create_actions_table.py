@@ -24,7 +24,7 @@ def upgrade() -> None:
     op.create_table('actions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('message_id', sa.String(), nullable=False),
-    sa.Column('action_type', sa.Enum('send_reply', 'calendar_event', 'job_apply', name='actiontype'), nullable=False),
+    sa.Column('action_type', sa.Enum('send_reply', 'draft_reply', 'calendar_event', 'job_apply', name='actiontype'), nullable=False),
     sa.Column('status', sa.Enum('pending', 'executed', 'approved', 'awaiting_approval', 'rejected', 'failed', name='actionstatus'), nullable=False),
     sa.Column('payload', sa.JSON()),
     sa.Column('result', sa.JSON()),
