@@ -17,3 +17,12 @@ dependencies = [
     "python-json-logger>=4.1.0",
     "sqlalchemy>=2.0.49",
 ]
+
+[project.scripts]
+approve = "app.cli.approve_pending:main"
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+include = ["app*"]
