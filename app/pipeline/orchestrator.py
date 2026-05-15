@@ -18,11 +18,11 @@ def run_once() -> None:
     """
     logger.info("Pipeline run starting")
     # Ingestion
-    # ingest.run()
+    ingest.run()
     # Classification
-    # classify.run()
+    classify.run()
     # Planning
-    # plan.run()
+    plan.run()
     # Execution
     execute.run()
     logger.info("Pipeline run complete")

@@ -11,7 +11,7 @@ from app.core.logging_config import setup_logging
 from app.core.models import (
     Action, ActionStatus, ActionType, Message, MessageStatus,
 )
-from app.pipeline.execution.handlers import email_handler
+from app.pipeline.execution.handlers import email
 
 
 logger = logging.getLogger(__name__)
@@ -80,7 +80,7 @@ def _reject(action: Action, db: Session) -> None:
     # Clean up the orphan Gmail draft
     draft_id = (action.payload or {}).get("draft_id")
     if draft_id:
-        email_handler.delete_draft(draft_id)
+        email.delete_draft(draft_id)
 
     print(f"Rejected action #{action.id}. Draft deleted.\n")
 
