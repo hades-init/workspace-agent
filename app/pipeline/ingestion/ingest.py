@@ -13,7 +13,7 @@ def run():
     """
     Fetch latest unread emails from mailbox and persist to database
     """
-    logger.info("Starting email ingestion ...")
+    logger.info("Starting email ingestion")
 
     emails = gmail_api.fetch_email_list()
     logger.info("Fetched %d emails", len(emails))

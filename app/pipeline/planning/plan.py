@@ -44,7 +44,7 @@ def dispatcher(message: Message) -> Action:
 
 
 def run():
-    logger.info("Starting email planning ...")
+    logger.info("Starting email planning")
 
     success = 0
     skipped = 0

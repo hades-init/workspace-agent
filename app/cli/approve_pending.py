@@ -134,8 +134,7 @@ def run() -> int | None:
             db.commit()  # commit after each decision
 
         print(
-            "Review complete. Summary: approved=%d rejected=%d skipped=%d", 
-            approved, rejected, skipped
+            f"Review complete.\nSummary: approved={approved} rejected={rejected} skipped={skipped}"
         )
 
     return approved

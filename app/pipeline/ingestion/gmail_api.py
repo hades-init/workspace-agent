@@ -19,7 +19,7 @@ def _get_service():
     return build("gmail", "v1", credentials=get_credentials())
 
 
-query = "is:unread (subject:(interview OR opportunity OR application OR role OR job))"    # newer_than:2d 
+query = "is:unread newer_than:1d (subject:(interview OR opportunity OR application OR role OR job))"    # newer_than:1d 
 
 def fetch_email_list() -> List[Dict[str, Any]]:
     """

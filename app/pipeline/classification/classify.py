@@ -10,7 +10,7 @@ from app.core.logging_config import setup_logging
 logger = logging.getLogger(__name__)
 
 def run():
-    logger.info("Starting email classification ...")
+    logger.info("Starting email classification")
     success = 0
     failed = 0
     with SessionLocal() as db:
